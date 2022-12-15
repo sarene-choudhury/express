@@ -53,12 +53,13 @@ app.get('/sort', (req, res) => {
 })
 
 //Question #6
-app.get('/target', (req, res) => (target) => {
+app.get('/target', (req, res) => {
     for(x = 0; x < req.body.array.length; x++){
         for(y = 1; y < req.body.array.length; y++){
-            if ((req.body.array[x] + req.body.array[y]) == target) return true;
+            if ((req.body.array[x] + req.body.array[y]) == req.body.target) res.send(true);
         }
     }
+    res.send(false);
 })
 
 console.log("Hey it's working")
